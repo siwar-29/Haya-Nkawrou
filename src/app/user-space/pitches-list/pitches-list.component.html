@@ -1,0 +1,48 @@
+<!-- Page header with logo and tagline-->
+<header class="py-5 bg-light border-bottom mb-4 bg-img">
+  <div class="container">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">Haya Nkawrou !</h1>
+      <p class="lead mb-0">Choose the pitch where you want to play</p>
+    </div>
+  </div>
+</header>
+<!-- Page content-->
+<div class="container">
+  <div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+      <!-- Featured blog post-->
+
+      <app-notifications
+        *ngIf="(competitions$ | async) && !searchTerm"
+        [competitions]="competitions$ | async"
+      ></app-notifications>
+      <!-- Nested row for non-featured blog posts-->
+      <div
+        class="row pitches-cont mb-5"
+        *ngIf="terrains$ | async as terrains; else noDataFound"
+      >
+        <div
+          class="col-lg-6"
+          *ngFor="let terrain of terrains | filter: searchTerm"
+        >
+          <app-terrain-card [terrain]="terrain"></app-terrain-card>
+        </div>
+      </div>
+      <ng-template #noDataFound>
+        <h2 class="h2 mb-4 mt-4 px-5 text-center">
+          No pitch found
+        </h2></ng-template
+      >
+    </div>
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+      <!-- Search widget-->
+      <app-search-bar (term)="changeSearchTerm($event)"></app-search-bar>
+      <!-- Categories widget-->
+      <app-categories-list (term)="changeSearchTerm($event)">
+      </app-categories-list>
+    </div>
+  </div>
+</div>

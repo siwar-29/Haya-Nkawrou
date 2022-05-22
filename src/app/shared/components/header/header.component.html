@@ -1,0 +1,114 @@
+<!-- <nav class="navbar navbar-expand-md navbar-dark">
+  <ngx-avatar
+    *ngIf="isEntrepriseSpace && user$?.user"
+    [pTooltip]="user$?.user?.username"
+    pTooltipPosition="bottom"
+    [name]="user$?.user?.username"
+  ></ngx-avatar>
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/']"
+        ><span class="rec-col"> GESTION DE RECRUTEMENT </span>
+      </a>
+    </div>
+
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div>
+      <ul
+        class="navbar-nav navbar-right"
+        *ngIf="isEntrepriseSpace && user$?.user"
+      >
+        <li class="avatar-pos active">
+          <a
+            type="button"
+            class="btn btn-dark logout-title"
+            routerLink="/"
+            (click)="logout()"
+            >Logout
+            <i class="fas fa-power-off"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br /> -->
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-5">
+          <a
+            class="nav-link res-icon"
+            pTooltip="Check your reservation"
+            (click)="showBasicDialog()"
+            ><i class="fas fa-calendar-alt"></i>
+            <span class="badge badge-primary badge-pill">{{
+              (reservations$ | async)?.length || 0
+            }}</span></a
+          >
+        </li>
+
+        <!--   <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li> -->
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/"
+            (click)="logout()"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- reservation block  -->
+<div *ngIf="displayBasic | async" class="list-group" style="z-index: 15">
+  <a
+    class="list-group-item list-group-item-action flex-column align-items-start"
+    *ngFor="let reservation of reservations$ | async"
+  >
+    <div class="row">
+      <div class="row">
+        <p class="mb-1 col-4">Reservation date:</p>
+        <small class="mb-1 col-4">{{
+          reservation?.dateReservation | date: "longDate"
+        }}</small>
+        <button type="button" [routerLink]="['/reservation', reservation?.id]">
+          See details
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <p class="mb-1 col-4">Reservation time:</p>
+      <small class="mb-1 col-4">{{
+        reservation?.time | date: "shortTime"
+      }}</small>
+    </div>
+  </a>
+</div>

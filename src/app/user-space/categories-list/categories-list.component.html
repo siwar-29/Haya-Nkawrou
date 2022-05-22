@@ -1,0 +1,19 @@
+<div class="card mb-4">
+  <div class="card-header">Regions</div>
+  <div class="card-body">
+    <div class="row">
+      <p-dropdown
+        class="col"
+        [options]="regions$ | async"
+        [(ngModel)]="selectedRegion"
+        optionLabel="Nom"
+        (onChange)="selectRegion()"
+        placeholder="select a region "
+      >
+        <ng-template let-option pTemplate="item">
+          {{ option.Nom | titlecase }}
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </div>
+</div>

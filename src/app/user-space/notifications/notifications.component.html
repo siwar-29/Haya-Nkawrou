@@ -1,0 +1,40 @@
+<p-carousel
+  [value]="competitions"
+  styleClass="custom-carousel"
+  [numVisible]="2"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="3000"
+>
+  <ng-template pTemplate="header">
+    <h5>Competitions List</h5>
+  </ng-template>
+  <ng-template let-competition pTemplate="item">
+    <div class="card mb-4 mrgn">
+      <div class="corner-ribbon top-right sticky green shadow">New Event</div>
+      <div class="card-body">
+        <div class="small text-muted">
+          {{ competition?.dateComp | date: "longDate" }}
+        </div>
+        <h2 class="card-title">
+          {{ competition.nameComp || "Competition Name" }}
+        </h2>
+        <p class="text-muted small">
+          <b> Competition Time :</b>
+          {{ competition?.timeCom | date: "shortTime" }}
+        </p>
+        <p class="text-muted small">
+          <b>Squad Number : </b> {{ competition?.nbEquipe }}
+        </p>
+        <p class="text-muted small">
+          <b>Player Number : </b> {{ competition?.nbPlace }}
+        </p>
+        <a
+          class="text-center btn btn-success"
+          [routerLink]="['/competition', competition.id]"
+          >Participate →</a
+        >
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>

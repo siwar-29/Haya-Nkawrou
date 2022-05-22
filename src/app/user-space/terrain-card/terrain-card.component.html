@@ -1,0 +1,28 @@
+<div class="card mb-4">
+  <a
+    ><img
+      class="card-img-top"
+      src="../../../assets/images/{{ terrain?.image }}"
+      alt="pitch picture"
+      style="max-height: 14em"
+  /></a>
+  <div class="card-body">
+    <h2 class="card-title h4">{{ terrain?.Nom | titlecase }}</h2>
+    <h4 class="card-title h6">Prix : {{ terrain?.Prix }}</h4>
+    <p class="card-text">
+      {{ terrain?.Description }}
+    </p>
+    <div class="small text-muted">
+      Adresse : {{ terrain?.Addresse | titlecase }}
+    </div>
+    <div class="small text-muted">
+      Opening hour : {{ terrain?.HOuvert | date: "shortTime" }}
+    </div>
+    <div class="small text-muted mb-4">
+      Closing hour : {{ terrain?.HFerm | date: "shortTime" }}
+    </div>
+    <a class="btn btn-primary" [routerLink]="['/terrain', terrain?.id]"
+      >Book a time →</a
+    >
+  </div>
+</div>
