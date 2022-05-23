@@ -25,7 +25,7 @@ export class PitchBookingComponent implements OnInit {
     this.pitchId = this.router.snapshot.paramMap.get('id');
     this.terrainToBook$ = this.terrainService.getTerrainByID(this.pitchId);
   }
-  pay(Prix, terrainID) {
+/*   pay(Prix, terrainID) {
     this.terrainService.pay(Prix).subscribe((data) => {
       this.json = JSON.stringify(data);
       this.n = this.json.length - 3;
@@ -45,5 +45,5 @@ export class PitchBookingComponent implements OnInit {
         console.log(data + 'reservation');
       });
     }, 5000);
-  }
+  } */
 }

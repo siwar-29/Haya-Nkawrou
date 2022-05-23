@@ -19,8 +19,9 @@ const appRoutes: Routes = [
   {
     path: '',
   //  canActivate: [AuthGuard],
-    loadChildren: () =>
+   loadChildren: () =>
       import('./user-space/userspace.module').then((m) => m.UserspaceModule),
+
   },
   {
     path: 'login',
@@ -50,8 +51,8 @@ const appRoutes: Routes = [
   ],
   declarations: [AppComponent, SignupComponent, LoginComponent],
   providers: [
-    AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+   /*  AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }, */
   ],
   bootstrap: [AppComponent],
 })

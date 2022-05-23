@@ -88,6 +88,7 @@
             class="login100-form-btn"
             (click)="register()"
             [disabled]="!signupForm.valid"
+            [routerLink]="['/home']"
           >
             <span *ngIf="!spinnerOn; else loadingSpin">Register</span>
             <ng-template #loadingSpin>

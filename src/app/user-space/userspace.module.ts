@@ -13,16 +13,21 @@ import { PitchBookingComponent } from './pitch-booking/pitch-booking.component';
 import { UserSpaceComponent } from './userspace.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ParticipateComponent } from './participate/participate.component';
+import { SignupComponent } from '../shared/components/signup/signup.component';
 
 const UserSpaceRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'register',
     pathMatch: 'full',
   },
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'register',
+    component: SignupComponent,
   },
   {
     path: 'terrain/:id',

@@ -11,13 +11,17 @@
     {
       "id": 2,
       "Nom": "sousse"
+    },
+    {
+      "id": 2,
+      "Nom": "Mahdia"
     }
   ],
   "terrains": [
     {
       "id": 0,
       "Nom": "monastir",
-      "Prix": 0,
+      "Prix": 200,
       "Description": "terrain foot / tennis ",
       "Addresse": "monastir ",
       "HFerm": "2022-05-19T23:25:30.993Z",
@@ -28,7 +32,7 @@
     {
       "id": 1,
       "Nom": "tunis",
-      "Prix": 0,
+      "Prix": 150,
       "Description": "terrain foot / tennis ",
       "Addresse": "tunis ",
       "HFerm": "2022-05-19T23:25:30.993Z",
@@ -39,13 +43,35 @@
     {
       "id": 2,
       "Nom": "sousse",
-      "Prix": 0,
+      "Prix": 10,
       "Description": "terrain foot / tennis ",
       "Addresse": "sousse ",
       "HFerm": "2022-05-19T23:25:30.993Z",
       "HOuvert": "2022-05-19T23:25:30.993Z",
       "Region": "2",
       "image": "pitch3.jpg"
+    },
+    {
+      "id": 3,
+      "Nom": "monastir",
+      "Prix": 0,
+      "Description": "terrain foot / tennis ",
+      "Addresse": "monastir ",
+      "HFerm": "2022-05-19T23:25:30.993Z",
+      "HOuvert": "2022-05-19T23:25:30.993Z",
+      "Region": "1",
+      "image": "pitch1.jpg"
+    },
+    {
+      "id": 4,
+      "Nom": "mahdia",
+      "Prix": 0,
+      "Description": "terrain foot / tennis ",
+      "Addresse": "mahdia ",
+      "HFerm": "2022-05-19T23:25:30.993Z",
+      "HOuvert": "2022-05-19T23:25:30.993Z",
+      "Region": "1",
+      "image": "pitch1.jpg"
     }
   ],
   "reservations": [
@@ -216,6 +242,27 @@
       "dateReservation": "2022-05-19T23:49:26.878Z",
       "time": "2022-05-19T23:49:26.878Z",
       "id": 23
+    },
+    {
+      "terrain": "/api/terrains/0",
+      "personneId": "/api/personnes/4",
+      "dateReservation": "2022-05-19T23:49:26.878Z",
+      "time": "2022-05-19T23:49:26.878Z",
+      "id": 24
+    },
+    {
+      "terrain": "/api/terrains/0",
+      "personneId": "/api/personnes/4",
+      "dateReservation": "2022-05-19T23:49:26.878Z",
+      "time": "2022-05-19T23:49:26.878Z",
+      "id": 25
+    },
+    {
+      "terrain": "/api/terrains/0",
+      "personneId": "/api/personnes/4",
+      "dateReservation": "2022-05-19T23:49:26.878Z",
+      "time": "2022-05-19T23:49:26.878Z",
+      "id": 26
     }
   ],
   "plannings": [
@@ -247,19 +294,28 @@
       "id": 0,
       "dateComp": "2022-05-19T23:49:26.878Z",
       "timeCom": "2022-05-19T23:49:26.878Z",
-      "nbEquipe": 0,
-      "nbPlace": 0,
+      "nbEquipe": 15,
+      "nbPlace": 9,
       "terrain": "0",
-      "nameComp": "aaaaaaa"
+      "nameComp": "ooredo stadium"
     },
     {
-      "id": 0,
+      "id": 1,
       "dateComp": "2022-05-19T23:49:26.878Z",
       "timeCom": "2022-05-19T23:49:26.878Z",
-      "nbEquipe": 0,
+      "nbEquipe": 7,
+      "nbPlace": 8,
+      "terrain": "2",
+      "nameComp": "Stade mustapha ben jannet"
+    },
+    {
+      "id": 2,
+      "dateComp": "2022-05-19T23:49:26.878Z",
+      "timeCom": "2022-05-19T23:49:26.878Z",
+      "nbEquipe": 11,
       "nbPlace": 0,
       "terrain": "1",
-      "nameComp": "bbbbbbb"
+      "nameComp": "Stade rades"
     }
   ]
 }

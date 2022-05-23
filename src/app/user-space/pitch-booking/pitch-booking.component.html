@@ -39,7 +39,22 @@
             hourFormat="24"
             [showIcon]="true"
             class="date-picker"
-          ></p-calendar>
+          ></p-calendar
+          ><br /><br />
+          <input
+            class="input100"
+            type="text"
+            formControlName="firstname"
+            name="First Name"
+            placeholder="First Name"
+          /><br />
+          <input
+            class="input100"
+            type="text"
+            formControlName="lastname"
+            name="Last Name"
+            placeholder="Last Name"
+          />
         </div>
       </div>
       <div class="row r3">
@@ -52,8 +67,9 @@
             type="submit"
             class="btn btn-primary mt-3"
             [disabled]="!dateToPick"
-            (click)="pay(terrain?.Prix, terrain.id)"
+            [routerLink]="['/competition', competitionId]"
           >
+            <!--f wost button (click)="pay(terrain?.Prix, terrain.id)" -->
             Book Time
           </button>
         </form>
